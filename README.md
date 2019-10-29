@@ -25,3 +25,13 @@
 
 mapDispatchToProps => dispatch action => update reducer => mapStateToProps
 
+## REDUX Dependency Installation
+npm users
+```
+npm install redux react-redux --save
+```
+
+yarn users
+```
+yarn add redux react-redux
+```
