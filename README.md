@@ -1,68 +1,27 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Redux FAQ:
+- What is redux and what problem does Redux Solve?
+  - Redux gives us a global store that all components can connect to so that we no longer have to pass everything from a parent
 
-## Available Scripts
+- What does the global store consist of?
+  - The global store consist of reducers which contain their own state that we can connect to. It is controller by a switch to which we can direct the path of the Reducer from certain actions we take like adding a pet object to our state.
 
-In the project directory, you can run:
+- What are actions?
+  - Actions are functions that let us be able to dispatch to the reducer. Dispatching to the reducer is how we are able to update our global store's state.
 
-### `yarn start`
+- How can we access the global store?
+  - We have to "connect" our component to the store which allows us to be able to map state to props to access the store.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Map state to props? What is that?
+  - When we say map state to props, we are saying, we are mapping the state of the store to the properties of our component we have connected. It's a function we define that return an object consisting of keys we want to call our props and the value of the store.reducer.state that we want to access.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- You mentioned dispatching actions to the reducer, so we just import an action and call it to connect?
+  - Super close! Just as we have map state to props. We also have map dispatch to props. Redux gives us a dispatch function that will go through our reducers and match the action that's been given to the reducers switch statement.
 
-### `yarn test`
+- Mind blown. Too much to compute
+  - Totally fine, none of this makes sense right now. We've only talked about it. Hands on experience will let you grasp these understandings just like any framework / library being learned. Sit back, relax, enjoy redux.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+REDUX FLOW
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+mapDispatchToProps => dispatch action => update reducer => mapStateToProps
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
