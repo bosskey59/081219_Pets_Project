@@ -1,3 +1,14 @@
+## REDUX Dependency Installation
+npm users
+```
+npm install redux react-redux --save
+```
+
+yarn users
+```
+yarn add redux react-redux
+```
+
 ## Redux FAQ:
 - **What is redux and what problem does Redux Solve?**
   - Redux gives us a global store that all components can connect to so that we no longer have to pass everything from a parent
@@ -24,14 +35,3 @@
 ## REDUX FLOW
 
 mapDispatchToProps => dispatch action => update reducer => mapStateToProps
-
-## REDUX Dependency Installation
-npm users
-```
-npm install redux react-redux --save
-```
-
-yarn users
-```
-yarn add redux react-redux
-```
