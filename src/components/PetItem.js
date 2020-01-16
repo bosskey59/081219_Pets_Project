@@ -1,15 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import {connect} from 'react-redux'
+import {removePet} from "../actions/index"
 
-const PetItem = ({ pet }) => {
+const PetItem = ({ pet, removePet }) => {
     return (
     <li className="collection-item">
       Pet Name: {pet.name}<br />
       Age: { pet.age } <br />
       Species: { pet.species } <br />
-      <Link to={`/pets/${pet.id}`}>View</Link>
+      <button onClick={()=>removePet(pet.id)}>Remove</button>
+      
     </li>
     );
 }
 
-export default PetItem
+export default connect(null, {removePet})(PetItem)
