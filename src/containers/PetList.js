@@ -3,9 +3,20 @@ import {connect} from 'react-redux'
 import PetItem from '../components/PetItem'
 import {fetchPets} from '../actions'
 import {setPets} from '../actions'
+import {removeUser} from '../actions'
+import {setUser} from '../actions'
 
 
 export class PetList extends Component {
+
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       
+    }
+  }
+  
 
 
 
@@ -19,12 +30,21 @@ export class PetList extends Component {
         })
   }
 
+  handleSubmit = () =>{
+    const userName = document.querySelector("#userInput").value
+    this.props.setUser({name: userName})
+  }
+
   render() {
     const pets = this.props.pets.map(( pet, i ) => <PetItem key={i} pet={ pet } />)
     // const pets = []
 
     return (
       <div>
+        <h2>Hello,{this.props.user.name}!</h2>
+        <button onClick={()=>this.props.removeUser()}>remove User</button>
+        <input id="userInput" /> 
+        <button onClick={this.handleSubmit}>set User</button>
         <h3>Pet List</h3>
         <ul className="collection">
           { pets }
@@ -34,11 +54,19 @@ export class PetList extends Component {
   }
 }
 
-const mapStateToProps = state =>{
+const mapStateToProps = globalStore =>{
   return{
-    pets: state.pets
+    pets: globalStore.pets,
+    user: globalStore.user
   }
 }
 
+// const mapDispatchToProps = dispatch =>{
+//   return{
+//     setPets: pets => dispatch(setPets(pets)),
+//     removeUser: ()=> dispatch(removeUser())
+//   }
+// }
 
-export default connect(mapStateToProps, {setPets})(PetList)
+
+export default connect(mapStateToProps, {setPets, removeUser, setUser})(PetList)

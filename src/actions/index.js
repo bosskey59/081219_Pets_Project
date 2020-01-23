@@ -45,6 +45,15 @@ export const setPets = (pets) =>{
     }
 }
 
+export const removeUser = () =>(
+    {type:"REMOVE_USER"}
+)
+
+export const setUser = (user) =>(
+    {type:"SET_USER", payload:user}
+)
+
+
 
 
 

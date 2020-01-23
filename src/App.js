@@ -35,7 +35,7 @@ class App extends Component {
             <Route exact path="/" component={ Home } />
             <Route exact path="/pets/new" component={PetNew} />
             <Route exact path="/pets" component={ PetList } />
-            <Route exact path="/pets/:id" render={ props => <PetShow {...props} pets={ this.state.pets } />} />
+            <Route exact path="/pets/:id" component={PetShow} />
           </Switch>
         </div>
       </Router>

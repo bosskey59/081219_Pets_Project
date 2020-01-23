@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {connect} from "react-redux"
 
 export class PetShow extends Component {
   constructor(props) {
@@ -25,4 +26,10 @@ export class PetShow extends Component {
   }
 }
 
-export default PetShow
+const mapStateToProps = state =>{
+  return{
+    pets:state.pets
+  }
+}
+
+export default connect(mapStateToProps)(PetShow)
